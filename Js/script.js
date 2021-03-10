@@ -3,22 +3,27 @@ $(window).on('load',function(){
     $('.loader .inner').fadeOut(500,function(){
         $('.loader').fadeOut(750)
     })
-    $('.items').isotope({
-        filter: selector,
-        animationOptions: {
-            duration: 1500,
-            easing: 'linear',
-            queue: false
-        }
+    $('#filters a').click(function(){
+        $('#filters .current').removeClass("current")
+        $(this).addClass("current")
+
+        var selector = $(this).attr("data-filter")
+        $('.items').isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 1500,
+                easing: 'linear',
+                queue: false
+            }
+        })
+
+        return false
+
     })
+
 })
 
 $(document).ready(function(){
-    $('#slides').superslides({
-        animation: 'fade',
-        play: 3000,
-        pagination: false,
-    })
     var typed = new Typed('.typed',{
         strings: ['Front-End Developer.', 'React Developer.', 'Welcome To My Portfolio.'],
         typeSpeed: 70,
@@ -77,24 +82,16 @@ $(document).ready(function(){
             countUpFinish = true
         }
     })
-    $('.items').isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 1500,
-            easing: 'linear',
-            queue: false
-        }
-    })
-    $('#filters a').click(function(){
-        $('#filters .current').removeClass("current")
-        $(this).addClass("current")
+    // $('.items').isotope({
+    //     filter: '*',
+    //     animationOptions: {
+    //         duration: 1500,
+    //         easing: 'linear',
+    //         queue: false
+    //     }
+    // })
 
-        var selector = $(this).attr("data-filter")
-
-
-        return false
-
-    })
+    
 
     $("#navigation li a").click(function(e) {
 		e.preventDefault();
