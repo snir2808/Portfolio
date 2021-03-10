@@ -3,6 +3,14 @@ $(window).on('load',function(){
     $('.loader .inner').fadeOut(500,function(){
         $('.loader').fadeOut(750)
     })
+    $('.items').isotope({
+        filter: selector,
+        animationOptions: {
+            duration: 1500,
+            easing: 'linear',
+            queue: false
+        }
+    })
 })
 
 $(document).ready(function(){
@@ -12,7 +20,7 @@ $(document).ready(function(){
         pagination: false,
     })
     var typed = new Typed('.typed',{
-        strings: ['Front-End Developer.', 'React Expert.', 'Welcome To My Portfolio.'],
+        strings: ['Front-End Developer.', 'React Developer.', 'Welcome To My Portfolio.'],
         typeSpeed: 70,
         loop: true, 
         startDelay: 1000,
@@ -83,14 +91,7 @@ $(document).ready(function(){
 
         var selector = $(this).attr("data-filter")
 
-        $('.items').isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 1500,
-                easing: 'linear',
-                queue: false
-            }
-        })
+
         return false
 
     })

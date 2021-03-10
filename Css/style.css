@@ -2,7 +2,10 @@ body{
     font-size: 14px;
     color: #333;
     letter-spacing: 1px;
-    background-color: black;
+    background-color: #D2D6D9;
+}
+#portfolio{
+    background-color: #D2D6D9;
 }
 .overlay{
     width: 100%;
