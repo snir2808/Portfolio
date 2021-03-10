@@ -20,7 +20,7 @@ $(document).ready(function(){
     })
 	$('.owl-carousel').owlCarousel({
 	    loop:true,
-	    items: 5,
+	    items: 4,
 	    responsive:{
 	        0:{
 	            items:1
@@ -32,7 +32,7 @@ $(document).ready(function(){
 	            items:3
 	        },
 	        938:{
-	            items:5
+	            items:4
 	        }
 	    }
 	});
@@ -101,7 +101,6 @@ $(document).ready(function(){
 		var targetElement = $(this).attr("href");
 		var targetPosition = $(targetElement).offset().top;
 		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
-
 	});
 
 
@@ -122,11 +121,38 @@ $(document).ready(function(){
 			body.removeClass("fixedNav");
 		}
     }
-
 })
 
+var isOpen = false
+var isTyped = false
 function display(){
     var div = $('#mail')
-    $(div).removeClass( "displayNone" )
-    $(div).addClass('display');
+    if(!isOpen){
+        $(div).removeClass( "displayNone" )
+        $(div).addClass('display');
+        isOpen = true
+        if(!isTyped){
+            var typed = new Typed('.Email',{
+                strings: [' Sniroos@gmail.com '],
+                typeSpeed: 70,
+                loop: false, 
+                startDelay: 250,
+                showCursor: false 
+            })
+            var typed = new Typed('.phone',{
+                strings: [' +972533666263 '],
+                typeSpeed: 70,
+                loop: false, 
+                startDelay: 250,
+                showCursor: false 
+            })
+            isTyped = true
+        }
+        
+    }else{
+        $(div).removeClass( "display" )
+        $(div).addClass('displayNone');
+        isOpen = false
+        
+    }
 }

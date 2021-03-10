@@ -11,7 +11,7 @@ body{
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.5);
 }
-.title{
+.titleMessage{
     position: absolute;
     width: 100%;
     height: 250px;
@@ -20,16 +20,16 @@ body{
     text-align: center;
     margin-top: -125px;
 }
-.title .heading p{
+.titleMessage .heading p{
     color: #ffff;
     text-shadow: 0px, 2px, 5px rgba(0, 0, 0, 0.4);
     font-weight: 100;
     letter-spacing: 7px;
 }
-.title .heading .main {
+.titleMessage .heading .main {
     font-size: 50px;
 }
-.title .heading .sub {
+.titleMessage .heading .sub {
     font-size: 30px;
 }
 
@@ -39,7 +39,8 @@ body{
 .aboutImage{
     max-width: 100%; 
 }
-.skillsSection{
+.skillsSection,
+.contactSection{
     background-color: #000000;
     color: #ffff;
 }
@@ -47,14 +48,24 @@ body{
     text-align: center;
     margin-left: 10px;
 }
-.chart{
+/* .chart{
     position: relative;
     width: 152px;
     height: 152px;
     display: inline-block;
     margin-left: 25px;
     text-align: center;
+} */
+
+.chart {
+	position: relative;
+    width: 152px;
+    height: 152px;
+    display: inline-block;
+    text-align: center;
 }
+
+
 .chart canvas{
     position: absolute;
     left: 0;
@@ -132,8 +143,8 @@ body{
     border-radius: 2px;
 }
 .contactButton:hover{
-    text-decoration: none;
     color: #EB9904;
+    /* text-decoration: none; */
     background-color: #ffff;
     cursor: pointer;
 }
@@ -186,7 +197,7 @@ a{
     -moz-transition: all 0.2s linear, 1s;
     -o-transition: all 0.2s linear, 1s;
     -ms-transition: all 0.2s linear, 1s;
-    transition: all 0.2s linear, 1s   
+    -transition: all 0.2s linear, 1s   
 }
 .items .item {
 	position: relative;
@@ -218,7 +229,7 @@ a{
     -moz-transition: all 0.2s linear, 0.2s;
     -o-transition: all 0.2s linear, 0.2s;
     -ms-transition: all 0.2s linear, 0.2s;
-    transition: all 0.2s linear, 0.2s;
+    -transition: all 0.2s linear, 0.2s;
 
 }
 .items .imageOverlay {
@@ -229,11 +240,12 @@ a{
     left: 0px;
     top: 0px;
     opacity: 0;
+    
     -webkit-transition: all 0.2s linear, 1s;
     -moz-transition: all 0.2s linear, 1s;
     -o-transition: all 0.2s linear, 1s;
     -ms-transition: all 0.2s linear, 1s;
-    transition: all 0.2s linear, 1s;
+    -transition: all 0.2s linear, 1s;
 }
 .items .item:hover .imageOverlay {
 	opacity: 1;
@@ -307,4 +319,8 @@ a{
     width: 100%;
     height: 100%;
     background: url(./../Media/Fading\ squares.gif) center center no-repeat
+}
+ul{
+    padding-inline-start: 0px;
+
 }
