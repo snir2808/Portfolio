@@ -51,14 +51,14 @@ body{
     text-align: center;
     margin-left: 10px;
 }
-/* .chart{
+.chart{
     position: relative;
     width: 152px;
     height: 152px;
     display: inline-block;
     margin-left: 25px;
     text-align: center;
-} */
+}
 
 .chart {
 	position: relative;

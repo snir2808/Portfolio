@@ -1,31 +1,19 @@
 
+
 $(window).on('load',function(){
     $('.loader .inner').fadeOut(500,function(){
         $('.loader').fadeOut(750)
     })
-    $('#filters a').click(function(){
-        $('#filters .current').removeClass("current")
-        $(this).addClass("current")
-
-        var selector = $(this).attr("data-filter")
-        $('.items').isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 1500,
-                easing: 'linear',
-                queue: false
-            }
-        })
-
-        return false
-
-    })
-
 })
 
 $(document).ready(function(){
+    $('#slides').superslides({
+        animation: 'fade',
+        play: 3000,
+        pagination: false,
+    })
     var typed = new Typed('.typed',{
-        strings: ['Front-End Developer.', 'React Developer.', 'Welcome To My Portfolio.'],
+        strings: ['Front-End Developer.', 'React Expert.', 'Welcome To My Portfolio.'],
         typeSpeed: 70,
         loop: true, 
         startDelay: 1000,
@@ -33,7 +21,7 @@ $(document).ready(function(){
     })
 	$('.owl-carousel').owlCarousel({
 	    loop:true,
-	    items: 4,
+	    items: 5,
 	    responsive:{
 	        0:{
 	            items:1
@@ -45,7 +33,7 @@ $(document).ready(function(){
 	            items:3
 	        },
 	        938:{
-	            items:4
+	            items:5
 	        }
 	    }
 	});
@@ -82,24 +70,38 @@ $(document).ready(function(){
             countUpFinish = true
         }
     })
-    // $('.items').isotope({
-    //     filter: '*',
-    //     animationOptions: {
-    //         duration: 1500,
-    //         easing: 'linear',
-    //         queue: false
-    //     }
-    // })
+    $('.items').isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 1500,
+            easing: 'linear',
+            queue: false
+        }
+    })
+    $('#filters a').click(function(){
+        $('#filters .current').removeClass("current")
+        $(this).addClass("current")
 
-    
+        var selector = $(this).attr("data-filter")
 
-    $("#navigation li a").click(function(e) {
-		e.preventDefault();
+        $('.items').isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 1500,
+                easing: 'linear',
+                queue: false
+            }
+        })
+        return false
 
-		var targetElement = $(this).attr("href");
-		var targetPosition = $(targetElement).offset().top;
-		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
-	});
+    })
+
+    $("#navigation li a").click(function(e){
+        e.preventDefault();
+        var targetElement = $(this).attr("href");
+        var targetPosition = $(targetElement).offset().top;
+        $("html, body").animation({scrollTop: targetPosition - 50 }, 'slow')
+    })
 
 
     const nav = $("#navigation")
@@ -119,8 +121,14 @@ $(document).ready(function(){
 			body.removeClass("fixedNav");
 		}
     }
+
 })
 
+function display(){
+    var div = $('#mail')
+    $(div).removeClass( "displayNone" )
+    $(div).addClass('display');
+}
 var isOpen = false
 var isTyped = false
 function display(){
