@@ -12,6 +12,7 @@ $(window).on('load',function(){
             queue: false
         }
     })
+    $('.linkedIn').attr("style", "display: inline-block !important");
 })
 
 $(document).ready(function(){
