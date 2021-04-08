@@ -22,7 +22,7 @@ $(document).ready(function(){
         pagination: false,
     })
     var typed = new Typed('.typed',{
-        strings: ['Front-End Developer.', 'React Expert.', 'Welcome To My Portfolio.'],
+        strings: ['Full-Stack Developer.', 'React Expert.', 'Welcome To My Portfolio.'],
         typeSpeed: 70,
         loop: true, 
         startDelay: 1000,
