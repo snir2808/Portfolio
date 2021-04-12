@@ -1,7 +1,7 @@
 
 
 $(window).on('load',function(){
-    $('.loader .inner').fadeOut(500,function(){
+    $('.loader .inner').fadeOut(75,function(){
         $('.loader').fadeOut(750)
     })
     $('.items').isotope({
